@@ -67,7 +67,19 @@ their view logic.
    have implementation within the request-response cycle only within a
    test environment. Not recommened for prod environment.
 
-2. Currently when you hit the API `/api/proposal_download` with the request body `{'start_date': 'YYYY-MM-DD', 'end_date': 'YYYY-MM-DD'}` is generate a csv file containing all the proposals having proposal date within the scope and
+2. Currently when you hit the API `/api/proposal_download/` with the request body `{'start_date': 'YYYY-MM-DD', 'end_date': 'YYYY-MM-DD'}` is generate a csv file containing all the proposals having proposal date within the scope and
    returns you the file in response.
 
 3. Pagination is added in the APIs `/api/user_search/?email='<email_id>'` and `/api/proposal_search/?name='<proposal_name>'`.
+
+4. We're using JWT for authentication.
+
+
+## Dependencies Used in this project
+
+1. django - Django Framework - It helps to host a WSGI application server and contains all the necessary modules needed to create interaction with the server.
+2. djangorestframework - Django Rest Framework - This package contains all the required modules needed to create REST APIs.
+3. djangorestframework_simplejwt - Simple JWT - Used to generate JWT tokens.
+4. dtf-yasg - API Document Generator - This module helps to generate Swagger and Redoc document for all the API endpoints.
+
+
