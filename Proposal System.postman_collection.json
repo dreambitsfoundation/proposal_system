@@ -1,0 +1,410 @@
+{
+	"info": {
+		"_postman_id": "740e0659-426c-41b0-a34e-54b6b5877308",
+		"name": "Proposal System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Account and Authentication",
+			"item": [
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjA4OTQyLCJpYXQiOjE2NjI2MTY5NDIsImp0aSI6IjVjNmViYzVhNjVjZTQwMDBiOGI3YWIzODRiNDE1YWFkIiwidXNlcl9pZCI6MX0.wTInyEJEVJkdUU18EKParyTjhprAeZY9rMdcXDB9cwI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/auth/user_account/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"user_account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"9774696698\",\n    \"password\": \"pass1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gourab Saha\",\n    \"email\": \"gourabsaha@outlook.in\",\n    \"phone_number\": \"9774696698\",\n    \"password\": \"pass1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/auth/user_account/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"user_account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gourab S\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/user_account/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user_account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjI2MTgyLCJpYXQiOjE2NjI2MzQxODIsImp0aSI6IjE2ZGJkMzEyMmQxODQxMzM5NjEzNTI4OWNjNTY5ZjcyIiwidXNlcl9pZCI6MX0.BcSQ4-RpEELbu9BlmTApxpESODnXWw28c6FUIsKcr3I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}/auth/user_account/1/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"user_account",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposal APIs",
+			"item": [
+				{
+					"name": "Get All Proposals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjMwNzkxLCJpYXQiOjE2NjI2Mzg3OTEsImp0aSI6IjU2YjM2YWJjYTA5YjQ3N2ZhOThlZGQxN2M2NTFlYmM3IiwidXNlcl9pZCI6OH0.oLteVVBG6ULDYF5tOiu9n84CwtXrTxfRO5MAkyV8K0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/proposal/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"proposal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjMwNzkxLCJpYXQiOjE2NjI2Mzg3OTEsImp0aSI6IjU2YjM2YWJjYTA5YjQ3N2ZhOThlZGQxN2M2NTFlYmM3IiwidXNlcl9pZCI6OH0.oLteVVBG6ULDYF5tOiu9n84CwtXrTxfRO5MAkyV8K0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposal_name\": \"Proposal 8\",\n    \"description\": \"Dummy description\",\n    \"proposal_date\": \"2022-04-25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/proposal/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"proposal",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Individual Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Proposal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/proposal/13/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"proposal",
+								"13",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjMwNzkxLCJpYXQiOjE2NjI2Mzg3OTEsImp0aSI6IjU2YjM2YWJjYTA5YjQ3N2ZhOThlZGQxN2M2NTFlYmM3IiwidXNlcl9pZCI6OH0.oLteVVBG6ULDYF5tOiu9n84CwtXrTxfRO5MAkyV8K0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/proposal/13/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"proposal",
+								"13",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Queries",
+			"item": [
+				{
+					"name": "Search User By Phone Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjMwNzkxLCJpYXQiOjE2NjI2Mzg3OTEsImp0aSI6IjU2YjM2YWJjYTA5YjQ3N2ZhOThlZGQxN2M2NTFlYmM3IiwidXNlcl9pZCI6OH0.oLteVVBG6ULDYF5tOiu9n84CwtXrTxfRO5MAkyV8K0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/user_search?email=gourabsaha@outlook.in",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"user_search"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "gourabsaha@outlook.in"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Proposal by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Download Proposals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1MjMwNzkxLCJpYXQiOjE2NjI2Mzg3OTEsImp0aSI6IjU2YjM2YWJjYTA5YjQ3N2ZhOThlZGQxN2M2NTFlYmM3IiwidXNlcl9pZCI6OH0.oLteVVBG6ULDYF5tOiu9n84CwtXrTxfRO5MAkyV8K0I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start_date\": \"2022-04-25\",\n    \"end_date\": \"2022-04-26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/proposal_download/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"proposal_download",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8000"
+		}
+	]
+}
