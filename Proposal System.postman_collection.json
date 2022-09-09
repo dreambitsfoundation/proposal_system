@@ -293,7 +293,7 @@
 			"name": "Search Queries",
 			"item": [
 				{
-					"name": "Search User By Phone Number",
+					"name": "Search User By Email",
 					"request": {
 						"auth": {
 							"type": "bearer",
