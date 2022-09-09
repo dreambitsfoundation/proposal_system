@@ -6,11 +6,11 @@ from rest_framework import permissions
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Hospital Backend API",
+        title="Proposal Management Service API.",
         default_version='v1',
-        description="Hospital Backend",
+        description="Proposal Service",
         terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="gourab@curus.co.in"),
+        contact=openapi.Contact(email="gourab@xebia.com"),
         license=openapi.License(name="Apache License"),
     ),
     public=True,
